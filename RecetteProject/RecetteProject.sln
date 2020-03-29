@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29806.167
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RecetteProject", "RecetteProject.csproj", "{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		erata|Any CPU = erata|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.erata|Any CPU.ActiveCfg = erata|Any CPU
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.erata|Any CPU.Build.0 = erata|Any CPU
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6BDA5F-4F75-48BC-A69F-C33EFC9EE3C6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {001C9A36-2BCC-416D-8518-76208E323BE2}
+	EndGlobalSection
+EndGlobal
