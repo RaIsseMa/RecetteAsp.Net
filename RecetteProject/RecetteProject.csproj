@@ -73,6 +73,7 @@
     <Content Include="Global.asax" />
     <Content Include="ImagesForStyle\recettebackground.jpg" />
     <Content Include="Images\Recette\DefaultRecette.jpg" />
+    <Content Include="js\JavaScriptCreerRecettePage.js" />
     <Content Include="js\JavaScriptFile1.js" />
     <Content Include="styleCss\StyleFile1.css" />
     <Content Include="styleCss\StyleSheet1.css" />

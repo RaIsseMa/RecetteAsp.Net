@@ -6,6 +6,7 @@
 <head runat="server">
     <title></title>
     <link href="styleCss/StyleSheet1.css" rel="stylesheet" />
+    <script src="js/JavaScriptCreerRecettePage.js"></script>
     <style type="text/css">
         .auto-style1 {
             width: 325px;
@@ -31,6 +32,7 @@
                     <td class="auto-style1">Nom De la Recette</td>
                     <td>
                         <asp:TextBox ID="TextBox1" runat="server" Width="506px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
@@ -38,13 +40,15 @@
                     <td>
                         <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="nomTheme" DataValueField="codeTheme" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
                         </asp:DropDownList>
-                        <asp:Label ID="themelbl" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="themelbl" runat="server"></asp:Label>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style1">Temps de preparation</td>
                     <td>
                         <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                        <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="TextBox2" ErrorMessage="RegularExpressionValidator" ValidationExpression="\d+"></asp:RegularExpressionValidator>
                     </td>
                 </tr>
                 <tr>
@@ -60,13 +64,14 @@
                 <tr>
                     <td class="auto-style1">Photo</td>
                     <td>
-                        <asp:FileUpload ID="FileUpload1" runat="server" Width="299px" />
+                        <asp:FileUpload ID="FileUpload1" runat="server" Width="299px"/>
                     </td>
                 </tr>
                 <tr>
                     <td class="auto-style1">Methode de preparation</td>
                     <td>
                         <asp:TextBox ID="TextBox3" runat="server" Height="162px" Width="435px"></asp:TextBox>
+                        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBox3" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
                     </td>
                     <td class="auto-style2">
                         <asp:Image ID="Image1" runat="server" Width="131px" ImageUrl="~/Images/Recette/DefaultRecette.jpg" />
@@ -75,7 +80,7 @@
                 <tr>
                     <td class="auto-style1">&nbsp;</td>
                     <td class="auto-style1">
-                        <asp:Button ID="btnCreer" runat="server" Text="Creer" />
+                        <asp:Button ID="btnCreer" runat="server" Text="Creer" OnClick="btnCreer_Click" />
                     </td>
                     <td class="auto-style2">&nbsp;</td>
                 </tr>
