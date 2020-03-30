@@ -13,6 +13,7 @@ namespace RecetteProject
     public partial class AjoutTheme : System.Web.UI.Page
     {
         themeTableAdapter themeTable = new themeTableAdapter();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             //code haytsard b HTTP Protocols b method post m html page

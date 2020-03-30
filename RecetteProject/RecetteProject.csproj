@@ -68,11 +68,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjoutTheme.aspx" />
+    <Content Include="CreerRecette.aspx" />
     <Content Include="Demarer.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ImagesForStyle\recettebackground.jpg" />
+    <Content Include="Images\Recette\DefaultRecette.jpg" />
     <Content Include="js\JavaScriptFile1.js" />
     <Content Include="styleCss\StyleFile1.css" />
+    <Content Include="styleCss\StyleSheet1.css" />
     <Content Include="Themes.html" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -83,6 +86,13 @@
     </Compile>
     <Compile Include="AjoutTheme.aspx.designer.cs">
       <DependentUpon>AjoutTheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CreerRecette.aspx.cs">
+      <DependentUpon>CreerRecette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CreerRecette.aspx.designer.cs">
+      <DependentUpon>CreerRecette.aspx</DependentUpon>
     </Compile>
     <Compile Include="DataSet1.cs">
       <DependentUpon>DataSet1.xsd</DependentUpon>
