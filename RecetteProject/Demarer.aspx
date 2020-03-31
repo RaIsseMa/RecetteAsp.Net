@@ -14,7 +14,7 @@
             <br />
             <asp:TextBox ID="TextBox1" runat="server" Visible="False"></asp:TextBox>
             <br />
-            <asp:HyperLink ID="HyperLink1" runat="server">Acceder au site</asp:HyperLink>
+            <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/CreerRecette.aspx">Acceder au site</asp:HyperLink>
             <br />
             <asp:Button ID="BtnValider" runat="server" OnClick="BtnValider_Click" Text="Valider" Visible="False" />
         </div>

@@ -70,6 +70,7 @@
     <Content Include="AjoutTheme.aspx" />
     <Content Include="CreerRecette.aspx" />
     <Content Include="Demarer.aspx" />
+    <Content Include="DetailRecette.aspx" />
     <Content Include="Global.asax" />
     <Content Include="ImagesForStyle\recettebackground.jpg" />
     <Content Include="Images\Recette\DefaultRecette.jpg" />
@@ -109,6 +110,13 @@
     </Compile>
     <Compile Include="Demarer.aspx.designer.cs">
       <DependentUpon>Demarer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DetailRecette.aspx.cs">
+      <DependentUpon>DetailRecette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DetailRecette.aspx.designer.cs">
+      <DependentUpon>DetailRecette.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

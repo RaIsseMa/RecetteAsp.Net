@@ -41,7 +41,7 @@ namespace RecetteProject
         {
             recetteTableAdapter tableAdapter = new recetteTableAdapter();
             DataTable table = tableAdapter.GetData();
-            int cound = table.Rows.Count;
+            int count = table.Rows.Count;
             string img = "~/Images/Recette/DefaultRecette.jpg";
             if (FileUpload1.HasFile)
             {
@@ -51,6 +51,8 @@ namespace RecetteProject
             }
 
             tableAdapter.Insert(TextBox1.Text, DateTime.Now, RadioButtonList1.SelectedValue, int.Parse(TextBox2.Text),TextBox3.Text, img, int.Parse(DropDownList1.SelectedValue));
+            count++;
+            Response.Redirect("DetailRecette.aspx?code=" + count  + "&nom=" + TextBox1.Text);
         }
     }
 }
