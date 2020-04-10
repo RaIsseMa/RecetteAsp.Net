@@ -1,0 +1,75 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site2.master.cs" Inherits="RecetteProject.Site2" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1M {
+            width: 100%;
+            height: 250px;
+        }
+        .auto-style2M {
+            width: 30%;
+        }
+        .auto-style3M {
+            width: 70%;
+        }
+        .auto-style4M {
+            width: 100%;
+        }
+        .menu{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            float:left;
+            padding-left:30px;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+              <img alt="" class="auto-style1M"  src="ImagesForStyle/recetteimg.jpg" />
+                <table style="width:100%;">
+                  <tr>
+                      <td class="auto-style2M">
+                          <ul class="menu">
+  
+                              <li><a href="Themes">Recette</a></li>
+                              
+                              <li><a href="Ingredient.aspx">Sincrire</a></li>   
+  
+                        </ul>
+                      </td>
+                      <td>
+                          <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                      </td>
+                    </tr>
+                </table>
+            
+        </div>
+
+        <table class="auto-style4M">
+                    <tr>
+                      <td class="auto-style2M">
+                       Barre qui sera utilise plus tard
+                      </td>
+                      <td class="auto-style3M">
+                          <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              </asp:ContentPlaceHolder>
+                      </td>
+                    </tr>
+        </table>
+    </form>
+</body>
+</html>

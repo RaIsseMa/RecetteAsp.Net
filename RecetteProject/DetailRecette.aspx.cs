@@ -39,7 +39,7 @@ namespace RecetteProject
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            int count = 0;
+       
             DataTable table = new DataTable();
             table.Columns.Add(new DataColumn("Ingredient", typeof(string)));
             foreach(GridViewRow row in GridView1.Rows)
@@ -50,7 +50,6 @@ namespace RecetteProject
                     table.Rows.Add(((Label)row.FindControl("Label1")).Text);
                 }
             }
-            Response.Write(count);
             GridView2.DataSource = table;
             GridView2.DataBind();
         }
@@ -65,8 +64,13 @@ namespace RecetteProject
                 int ingId = (int)queries.getNumIngQuery(row.Cells[1].Text);
                 int qtn;
                 if (((TextBox)row.FindControl("qntTxt")).Text == null)
+                {
                     qtn = 0;
-                qtn = int.Parse(((TextBox)row.FindControl("qntTxt")).Text);
+                }
+                else
+                {
+                    qtn = int.Parse(((TextBox)row.FindControl("qntTxt")).Text);
+                }
                 adapter.Insert(1, ingId, qtn);
             }
 

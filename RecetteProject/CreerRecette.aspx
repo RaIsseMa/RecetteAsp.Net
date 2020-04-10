@@ -1,9 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreerRecette.aspx.cs" Inherits="RecetteProject.CreerRecette" %>
+﻿<%@ Page Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="CreerRecette.aspx.cs" Inherits="RecetteProject.CreerRecette" %>
 
-<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <title></title>
     <link href="styleCss/StyleSheet1.css" rel="stylesheet" />
     <script src="js/JavaScriptCreerRecettePage.js"></script>
@@ -16,15 +14,10 @@
             width: 252px;
         }
     </style>
-</head>
-<body>
-    <form id="form1" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Bonjour"></asp:Label>
-<asp:Label ID="Label2" runat="server" Text="En Ligne :" CssClass="onlinelbl"></asp:Label>
-            <br />
-            <br />
-            <hr />
             <asp:Label ID="Label3" runat="server" Text="Creer Recette"></asp:Label>
             <br />
             <table style="width:83%;">
@@ -87,6 +80,5 @@
             </table>
         </div>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:recettesdbConnectionString %>" SelectCommand="SELECT [codeTheme], [nomTheme] FROM [theme]"></asp:SqlDataSource>
-    </form>
-</body>
-</html>
+
+</asp:Content>

@@ -17,16 +17,16 @@ namespace RecetteProject
             if (!IsPostBack)
             {
                 
-                Label2.Text = "En Ligne :" + Application["TotalOnlineUsers"];
+                
                 if (Request.Cookies["UserRecetteSite"] != null)
                 {
                     HttpCookie cookie = Request.Cookies["UserRecetteSite"];
                     string nom = cookie["UserName"];
-                    Label1.Text = "Bonjour " + nom;
+                   
                 }
                 else
                 {
-                    Label1.Text = "Bonjour " + Session["UserName"];
+                    
                 }
             }
            

@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="RecetteProject.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1M {
+            width: 100%;
+            height: 250px;
+        }
+        .auto-style2M {
+            width: 70%;
+        }
+        .menu{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            float:left;
+            padding-left:30px;
+        }
+        a{
+            text-decoration:none;
+            
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div>
+              <img alt="" class="auto-style1M"  src="ImagesForStyle/recetteimg.jpg" /><table style="width:100%;">
+                  <tr>
+                      <td class="auto-style2M">
+                          <ul class="menu">
+  
+                              <li><a href="Themes">Themes.html</a></li>
+                              
+                              <li><a href="Ingredient.aspx">Ingredient</a></li>
+  
+                              <li><a href="CreerRecette.aspx">Recette</a></li>
+  
+                        </ul>
+                      </td>
+                      <td>
+                          <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                      </td>
+                  </tr>
+              </table>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+              </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

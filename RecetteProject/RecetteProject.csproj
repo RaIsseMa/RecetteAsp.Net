@@ -68,12 +68,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AjoutTheme.aspx" />
+    <Content Include="ConsulterRecette.aspx" />
+    <Content Include="ConsulterRecetteDetail.aspx" />
     <Content Include="CreerRecette.aspx" />
     <Content Include="Demarer.aspx" />
     <Content Include="DetailRecette.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ImagesForStyle\cook.png" />
+    <Content Include="ImagesForStyle\pencil.png" />
     <Content Include="ImagesForStyle\recettebackground.jpg" />
+    <Content Include="ImagesForStyle\recetteimg.jpg" />
+    <Content Include="ImagesForStyle\trash.png" />
     <Content Include="Images\Recette\DefaultRecette.jpg" />
+    <Content Include="Ingredient.aspx" />
     <Content Include="js\JavaScriptCreerRecettePage.js" />
     <Content Include="js\JavaScriptFile1.js" />
     <Content Include="styleCss\StyleFile1.css" />
@@ -88,6 +95,20 @@
     </Compile>
     <Compile Include="AjoutTheme.aspx.designer.cs">
       <DependentUpon>AjoutTheme.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsulterRecette.aspx.cs">
+      <DependentUpon>ConsulterRecette.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsulterRecette.aspx.designer.cs">
+      <DependentUpon>ConsulterRecette.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsulterRecetteDetail.aspx.cs">
+      <DependentUpon>ConsulterRecetteDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsulterRecetteDetail.aspx.designer.cs">
+      <DependentUpon>ConsulterRecetteDetail.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreerRecette.aspx.cs">
       <DependentUpon>CreerRecette.aspx</DependentUpon>
@@ -121,7 +142,28 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Ingredient.aspx.cs">
+      <DependentUpon>Ingredient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ingredient.aspx.designer.cs">
+      <DependentUpon>Ingredient.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site2.Master.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site2.Master.designer.cs">
+      <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="DataSet1.xsc">
@@ -136,6 +178,8 @@
       <DependentUpon>DataSet1.xsd</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Site2.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
