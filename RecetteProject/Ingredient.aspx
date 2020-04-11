@@ -136,123 +136,119 @@
             </asp:FormView>
         </asp:View>
         <asp:View ID="View4" runat="server">
-            <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="numIng" DataSourceID="SqlDataSource2">
+            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="numIng" DataSourceID="SqlDataSource2" >
+                <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
-                    <asp:TemplateField ShowHeader="False">
-                        <ItemTemplate>
-                            <asp:Image ID="Image1" runat="server" Height="33px" ImageUrl="~/ImagesForStyle/pencil.png" Width="21px" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
-                    <asp:TemplateField ShowHeader="False">
-                        <EditItemTemplate>
-                            <asp:LinkButton ID="LinkButton1" runat="server" CausesValidation="True" CommandName="Update" Text="Update"></asp:LinkButton>
-                            &nbsp;<asp:LinkButton ID="LinkButton2" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel"></asp:LinkButton>
-                        </EditItemTemplate>
-                        <ItemTemplate>
-                            <asp:Image ID="Image2" runat="server" Height="38px" ImageUrl="~/ImagesForStyle/trash.png" Width="35px" />
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                                         <asp:CommandField  ButtonType="Image" EditImageUrl="~/ImagesForStyle/pencil.png"
+ ShowEditButton="True"  ShowDeleteButton="True" DeleteImageUrl="ImagesForStyle/trash.png" />
+   
                     <asp:BoundField DataField="numIng" HeaderText="numIng" InsertVisible="False" ReadOnly="True" SortExpression="numIng" />
                     <asp:BoundField DataField="nomIng" HeaderText="nomIng" SortExpression="nomIng" />
                     <asp:BoundField DataField="puIng" HeaderText="puIng" SortExpression="puIng" />
                     <asp:BoundField DataField="uniteMesuring" HeaderText="uniteMesuring" SortExpression="uniteMesuring" />
                 </Columns>
+                <EditRowStyle BackColor="#999999" />
+                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
+                <PagerStyle BackColor="#284775" ForeColor="White" HorizontalAlign="Center" />
+                <RowStyle BackColor="#F7F6F3" ForeColor="#333333" />
+                <SelectedRowStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SortedAscendingCellStyle BackColor="#E9E7E2" />
+                <SortedAscendingHeaderStyle BackColor="#506C8C" />
+                <SortedDescendingCellStyle BackColor="#FFFDF8" />
+                <SortedDescendingHeaderStyle BackColor="#6F8DAE" />
             </asp:GridView>
         </asp:View>
         <asp:View ID="View5" runat="server">
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="numIng" DataSourceID="SqlDataSource2">
                 <AlternatingItemTemplate>
-                    <span style="">numIng:
-                    <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
-                    <br />
-                    nomIng:
-                    <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
-                    <br />
-                    puIng:
-                    <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
-                    <br />
-                    uniteMesuring:
-                    <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
-                    <br />
-                    <br />
-                    </span>
+                    <li style="">numIng:
+                        <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
+                        <br />
+                        nomIng:
+                        <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
+                        <br />
+                        puIng:
+                        <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
+                        <br />
+                        uniteMesuring:
+                        <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
+                        <br />
+                    </li>
                 </AlternatingItemTemplate>
                 <EditItemTemplate>
-                    <span style="">numIng:
-                    <asp:Label ID="numIngLabel1" runat="server" Text='<%# Eval("numIng") %>' />
-                    <br />
-                    nomIng:
-                    <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
-                    <br />
-                    puIng:
-                    <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
-                    <br />
-                    uniteMesuring:
-                    <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
-                    <br />
-                    <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
-                    <br />
-                    <br />
-                    </span>
+                    <li style="">numIng:
+                        <asp:Label ID="numIngLabel1" runat="server" Text='<%# Eval("numIng") %>' />
+                        <br />
+                        nomIng:
+                        <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
+                        <br />
+                        puIng:
+                        <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
+                        <br />
+                        uniteMesuring:
+                        <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
+                        <br />
+                        <asp:Button ID="UpdateButton" runat="server" CommandName="Update" Text="Update" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Cancel" />
+                    </li>
                 </EditItemTemplate>
                 <EmptyDataTemplate>
-                    <span>No data was returned.</span>
+                    No data was returned.
                 </EmptyDataTemplate>
                 <InsertItemTemplate>
-                    <span style="">nomIng:
-                    <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
-                    <br />
-                    puIng:
-                    <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
-                    <br />
-                    uniteMesuring:
-                    <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
-                    <br />
-                    <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
-                    <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
-                    <br />
-                    <br />
-                    </span>
+                    <li style="">nomIng:
+                        <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
+                        <br />
+                        puIng:
+                        <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
+                        <br />
+                        uniteMesuring:
+                        <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
+                        <br />
+                        <asp:Button ID="InsertButton" runat="server" CommandName="Insert" Text="Insert" />
+                        <asp:Button ID="CancelButton" runat="server" CommandName="Cancel" Text="Clear" />
+                    </li>
                 </InsertItemTemplate>
+                <ItemSeparatorTemplate>
+                    <br />
+                </ItemSeparatorTemplate>
                 <ItemTemplate>
-                    <span style="">numIng:
-                    <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
-                    <br />
-                    nomIng:
-                    <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
-                    <br />
-                    puIng:
-                    <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
-                    <br />
-                    uniteMesuring:
-                    <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
-                    <br />
-                    <br />
-                    </span>
+                    <li style="">numIng:
+                        <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
+                        <br />
+                        nomIng:
+                        <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
+                        <br />
+                        puIng:
+                        <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
+                        <br />
+                        uniteMesuring:
+                        <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
+                        <br />
+                    </li>
                 </ItemTemplate>
                 <LayoutTemplate>
-                    <div id="itemPlaceholderContainer" runat="server" style="">
-                        <span runat="server" id="itemPlaceholder" />
-                    </div>
+                    <ul id="itemPlaceholderContainer" runat="server" style="">
+                        <li runat="server" id="itemPlaceholder" />
+                    </ul>
                     <div style="">
                     </div>
                 </LayoutTemplate>
                 <SelectedItemTemplate>
-                    <span style="">numIng:
-                    <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
-                    <br />
-                    nomIng:
-                    <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
-                    <br />
-                    puIng:
-                    <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
-                    <br />
-                    uniteMesuring:
-                    <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
-                    <br />
-                    <br />
-                    </span>
+                    <li style="">numIng:
+                        <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
+                        <br />
+                        nomIng:
+                        <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
+                        <br />
+                        puIng:
+                        <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
+                        <br />
+                        uniteMesuring:
+                        <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
+                        <br />
+                    </li>
                 </SelectedItemTemplate>
             </asp:ListView>
         </asp:View>
@@ -300,5 +296,7 @@
             <asp:Parameter Name="original_uniteMesuring" Type="String" />
         </UpdateParameters>
     </asp:SqlDataSource>
+    
+    <asp:SqlDataSource ID="SqlDataSource3" runat="server" ConnectionString="<%$ ConnectionStrings:recettesdbConnectionString %>" SelectCommand="SELECT * FROM [ingredient]"></asp:SqlDataSource>
     
     </asp:Content>

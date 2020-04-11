@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -12,8 +13,11 @@ namespace RecetteProject
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if(!IsPostBack)
+            if (!IsPostBack)
+            {
                 MultiView1.ActiveViewIndex = 0;
+                
+            }
         }
 
         protected void LinkButton1_Click(object sender, EventArgs e)
@@ -54,13 +58,17 @@ namespace RecetteProject
         protected void LinkButton5_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 3;
+          
 
         }
 
         protected void LinkButton4_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 4;
+            
 
         }
+
+       
     }
 }
