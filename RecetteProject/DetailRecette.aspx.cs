@@ -32,17 +32,13 @@ namespace RecetteProject
             }
         }
 
-        protected void CheckBox1_CheckedChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void ImageButton1_Click(object sender, ImageClickEventArgs e)
         {
-       
             DataTable table = new DataTable();
             table.Columns.Add(new DataColumn("Ingredient", typeof(string)));
-            foreach(GridViewRow row in GridView1.Rows)
+            foreach (GridViewRow row in GridView1.Rows)
             {
                 CheckBox checkIng = (CheckBox)row.FindControl("CheckBox1");
                 if (checkIng.Checked)
@@ -50,31 +46,37 @@ namespace RecetteProject
                     table.Rows.Add(((Label)row.FindControl("Label1")).Text);
                 }
             }
+            if (table.Rows.Count == 0)
+                return;
+            ImageButton2.Visible = true;
             GridView2.DataSource = table;
             GridView2.DataBind();
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void ImageButton2_Click(object sender, ImageClickEventArgs e)
         {
             QueriesTableAdapter queries = new QueriesTableAdapter();
             ingredients_recetteTableAdapter adapter = new ingredients_recetteTableAdapter();
             int id = int.Parse(Request.QueryString["code"]);
-            foreach(GridViewRow row in GridView2.Rows)
+            foreach (GridViewRow row in GridView2.Rows)
             {
+                //getNumIngQuery query in the DataSet return the number of ingredient count on name of ingredient
                 int ingId = (int)queries.getNumIngQuery(row.Cells[1].Text);
-                int qtn;
-                if (((TextBox)row.FindControl("qntTxt")).Text == null)
-                {
-                    qtn = 0;
-                }
-                else
+                int qtn = 0;
+                try
                 {
                     qtn = int.Parse(((TextBox)row.FindControl("qntTxt")).Text);
                 }
-                adapter.Insert(1, ingId, qtn);
+                catch (FormatException ex)
+                {
+                    errorlbl.Visible = true;
+                    return;
+                }
+
+                adapter.Insert(id, ingId, qtn);
             }
 
-
+            Response.Redirect("~/CreerRecette.aspx");
         }
     }
 }

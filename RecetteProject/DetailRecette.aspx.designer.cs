@@ -60,13 +60,22 @@ namespace RecetteProject
         protected global::System.Web.UI.WebControls.GridView GridView1;
 
         /// <summary>
-        /// Button1 control.
+        /// ImageButton1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton1;
+
+        /// <summary>
+        /// ImageButton2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ImageButton ImageButton2;
 
         /// <summary>
         /// GridView2 control.
@@ -78,13 +87,13 @@ namespace RecetteProject
         protected global::System.Web.UI.WebControls.GridView GridView2;
 
         /// <summary>
-        /// Button2 control.
+        /// errorlbl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Label errorlbl;
 
         /// <summary>
         /// SqlDataSource1 control.

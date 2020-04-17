@@ -1,57 +1,66 @@
 ﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="RecetteProject.Site1" %>
 
+<%@ Register TagPrefix="ucT1" Src="~/WebUserControl1.ascx" TagName="HeadControl" %>
+
+
 <!DOCTYPE html>
 
 <html>
 <head runat="server">
     <title></title>
+    <script src="js/JavaScriptCreerRecettePage.js"></script>
+
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
     <style type="text/css">
-        .auto-style1M {
+        html, body {
+            height: 100%;
             width: 100%;
-            height: 250px;
-        }
-        .auto-style2M {
-            width: 70%;
-        }
-        .menu{
-            list-style-type: none;
             margin: 0;
-            padding: 0;
+            padding:0;
+            max-width:100%;
+            overflow-x:hidden;
         }
-        li{
-            float:left;
-            padding-left:30px;
+        body {
+            padding:0;            
+            background-image: url('../ImagesForStyle/backgrounddemarer.jpg');
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
         }
-        a{
-            text-decoration:none;
-            
+        .table-style {
+            position: relative;
+            margin-top:30px;
+            margin-bottom:20px;
+            padding:5px;
+            background: rgba(0,0,0, 0.6);
+            text-align: center;
+            border-radius: 25px;
+        }
+        .style1 {
+            width: 325px;
+            text-align: right;
+            color:white;
+        }
+
+        .style2 {
+            width: 252px;
+        }
+
+        .style3{
+            text-align:left;
+            margin-left:10px;
+        }
+        .style4{
+            margin-top:40px;
         }
     </style>
+
 </head>
 <body>
     <form id="form1" runat="server">
 
         <div>
-              <img alt="" class="auto-style1M"  src="ImagesForStyle/recetteimg.jpg" /><table style="width:100%;">
-                  <tr>
-                      <td class="auto-style2M">
-                          <ul class="menu">
-  
-                              <li><a href="Themes">Themes.html</a></li>
-                              
-                              <li><a href="Ingredient.aspx">Ingredient</a></li>
-  
-                              <li><a href="CreerRecette.aspx">Recette</a></li>
-  
-                        </ul>
-                      </td>
-                      <td>
-                          <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
-                      </td>
-                  </tr>
-              </table>
+            <ucT1:HeadControl runat="server" id="WebUserControl1" />
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
               </asp:ContentPlaceHolder>
         </div>

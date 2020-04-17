@@ -1,77 +1,75 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Ingredient.aspx.cs" Inherits="RecetteProject.Ingredient" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-        .auto-style3 {
-            width: 115px;
-        }
-        .auto-style4 {
-            width: 143px;
-        }
+    <style type="text/css">      
         .style{
-            width:100%;
+            width:95%;
+            margin-bottom:20px;
+            margin-left:30px;
+        }
+        .style2{
+            margin-left:30px;
         }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     
-    <table style="width:100%;">
+    <table style="width:100%;margin-top:60px">
         <tr>
-            <td class="auto-style3">
-                <asp:LinkButton ID="LinkButton6" runat="server" OnClick="LinkButton6_Click">DataList</asp:LinkButton>
-            </td>
-            <td class="auto-style4">
-                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">DetailsView</asp:LinkButton>
+            <td>
+                <asp:LinkButton ID="LinkButton0" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">DataList</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton2_Click">FormView</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">DetailsView</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton5_Click">GridView</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton2" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">FormView</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton4_Click">ListView</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">GridView</asp:LinkButton>
             </td>
             <td>
-                <asp:LinkButton ID="LinkButton3" runat="server" OnClick="LinkButton3_Click">Repeater</asp:LinkButton>
+                <asp:LinkButton ID="LinkButton4" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">ListView</asp:LinkButton>
+            </td>
+            <td>
+                <asp:LinkButton ID="LinkButton5" runat="server" OnClick="LinkButton_Click" Font-Bold="True" Font-Size="18px" ForeColor="#006699">Repeater</asp:LinkButton>
             </td>
         </tr>
     </table>
     <asp:MultiView ID="MultiView1" runat="server">
         <asp:View ID="View1" runat="server">
-            <asp:DataList ID="DataList1" runat="server" CellPadding="4" DataKeyField="numIng" DataSourceID="SqlDataSource2" ForeColor="#333333">
-                <AlternatingItemStyle BackColor="White" ForeColor="#284775" />
-                <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
-                <ItemStyle BackColor="#F7F6F3" ForeColor="#333333" />
+            <asp:DataList ID="DataList1" runat="server" CellPadding="3" DataKeyField="numIng" DataSourceID="SqlDataSource2" BackColor="#DEBA84" BorderColor="#DEBA84" BorderStyle="None" BorderWidth="1px" CellSpacing="2" CssClass="style" GridLines="Both">
+                <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
+                <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />
+                <ItemStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
                 <ItemTemplate>
-                    numIng:
+                    Numero:
                     <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
                     <br />
-                    nomIng:
+                    Nom:
                     <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
                     <br />
-                    puIng:
+                    Prix Unitaire:
                     <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
                     <br />
-                    uniteMesuring:
+                    Unite de mesure:
                     <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
                     <br />
                     <br />
                 </ItemTemplate>
-                <SelectedItemStyle BackColor="#E2DED6" Font-Bold="True" ForeColor="#333333" />
+                <SelectedItemStyle BackColor="#738A9C" Font-Bold="True" ForeColor="White" />
             </asp:DataList>
         </asp:View>
         <asp:View ID="View2" runat="server">
-            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="numIng" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="50px" Width="513px">
+            <asp:DetailsView ID="DetailsView1" runat="server" AllowPaging="True" AutoGenerateRows="False" CellPadding="4" DataKeyNames="numIng" DataSourceID="SqlDataSource2" ForeColor="#333333" GridLines="None" Height="50px" Width="513px" CssClass="style2">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <CommandRowStyle BackColor="#E2DED6" Font-Bold="True" />
                 <EditRowStyle BackColor="#999999" />
                 <FieldHeaderStyle BackColor="#E9ECF1" Font-Bold="True" />
                 <Fields>
-                    <asp:BoundField DataField="numIng" HeaderText="numIng" InsertVisible="False" ReadOnly="True" SortExpression="numIng" />
-                    <asp:BoundField DataField="nomIng" HeaderText="nomIng" SortExpression="nomIng" />
-                    <asp:BoundField DataField="puIng" HeaderText="puIng" SortExpression="puIng" />
-                    <asp:BoundField DataField="uniteMesuring" HeaderText="uniteMesuring" SortExpression="uniteMesuring" />
+                    <asp:BoundField DataField="numIng" HeaderText="Numero" InsertVisible="False" ReadOnly="True" SortExpression="numIng" />
+                    <asp:BoundField DataField="nomIng" HeaderText="Nom" SortExpression="nomIng" />
+                    <asp:BoundField DataField="puIng" HeaderText="Prix Unitaire" SortExpression="puIng" />
+                    <asp:BoundField DataField="uniteMesuring" HeaderText="Unite de mesure" SortExpression="uniteMesuring" />
                 </Fields>
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -83,16 +81,16 @@
         <asp:View ID="View3" runat="server">
             <asp:FormView ID="FormView1" runat="server" AllowPaging="True" CellPadding="4" DataKeyNames="numIng" DataSourceID="SqlDataSource2" ForeColor="#333333" CssClass="style">
                 <EditItemTemplate>
-                    numIng:
+                    Numero:
                     <asp:Label ID="numIngLabel1" runat="server" Text='<%# Eval("numIng") %>' />
                     <br />
-                    nomIng:
+                    Nom:
                     <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
                     <br />
-                    puIng:
+                    Prix Unitaire:
                     <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
                     <br />
-                    uniteMesuring:
+                    Unite de mesure:
                     <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
                     <br />
                     <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
@@ -102,29 +100,29 @@
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                 <HeaderStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
                 <InsertItemTemplate>
-                    nomIng:
+                    Nom:
                     <asp:TextBox ID="nomIngTextBox" runat="server" Text='<%# Bind("nomIng") %>' />
                     <br />
-                    puIng:
+                    Prix Unitaire:
                     <asp:TextBox ID="puIngTextBox" runat="server" Text='<%# Bind("puIng") %>' />
                     <br />
-                    uniteMesuring:
+                    Unite de mesure:
                     <asp:TextBox ID="uniteMesuringTextBox" runat="server" Text='<%# Bind("uniteMesuring") %>' />
                     <br />
                     <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
                     &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
                 </InsertItemTemplate>
                 <ItemTemplate>
-                    numIng:
+                    Numero:
                     <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
                     <br />
-                    nomIng:
+                    Nom:
                     <asp:Label ID="nomIngLabel" runat="server" Text='<%# Bind("nomIng") %>' />
                     <br />
-                    puIng:
+                    Prix Unitaire:
                     <asp:Label ID="puIngLabel" runat="server" Text='<%# Bind("puIng") %>' />
                     <br />
-                    uniteMesuring:
+                    Unite de mesure:
                     <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Bind("uniteMesuring") %>' />
                     <br />
                     <asp:LinkButton ID="EditButton" runat="server" CausesValidation="False" CommandName="Edit" Text="Edit" />
@@ -136,16 +134,16 @@
             </asp:FormView>
         </asp:View>
         <asp:View ID="View4" runat="server">
-            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="numIng" DataSourceID="SqlDataSource2" >
+            <asp:GridView ID="GridView1" runat="server" CellPadding="4" ForeColor="#333333" GridLines="None" AutoGenerateColumns="False" DataKeyNames="numIng" DataSourceID="SqlDataSource2" OnRowDataBound="GridView1_RowDataBound" CssClass="style">
                 <AlternatingRowStyle BackColor="White" ForeColor="#284775" />
                 <Columns>
                                          <asp:CommandField  ButtonType="Image" EditImageUrl="~/ImagesForStyle/pencil.png"
  ShowEditButton="True"  ShowDeleteButton="True" DeleteImageUrl="ImagesForStyle/trash.png" />
    
-                    <asp:BoundField DataField="numIng" HeaderText="numIng" InsertVisible="False" ReadOnly="True" SortExpression="numIng" />
-                    <asp:BoundField DataField="nomIng" HeaderText="nomIng" SortExpression="nomIng" />
-                    <asp:BoundField DataField="puIng" HeaderText="puIng" SortExpression="puIng" />
-                    <asp:BoundField DataField="uniteMesuring" HeaderText="uniteMesuring" SortExpression="uniteMesuring" />
+                    <asp:BoundField DataField="numIng" HeaderText="Numero" InsertVisible="False" ReadOnly="True" SortExpression="numIng" />
+                    <asp:BoundField DataField="nomIng" HeaderText="Nom" SortExpression="nomIng" />
+                    <asp:BoundField DataField="puIng" HeaderText="Prix Unitaire" SortExpression="puIng" />
+                    <asp:BoundField DataField="uniteMesuring" HeaderText="Unite de mesure" SortExpression="uniteMesuring" />
                 </Columns>
                 <EditRowStyle BackColor="#999999" />
                 <FooterStyle BackColor="#5D7B9D" Font-Bold="True" ForeColor="White" />
@@ -162,16 +160,16 @@
         <asp:View ID="View5" runat="server">
             <asp:ListView ID="ListView1" runat="server" DataKeyNames="numIng" DataSourceID="SqlDataSource2">
                 <AlternatingItemTemplate>
-                    <li style="">numIng:
+                    <li style="color:white">Numero:
                         <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
                         <br />
-                        nomIng:
+                        Nom:
                         <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
                         <br />
-                        puIng:
+                        Prix Unitaire:
                         <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
                         <br />
-                        uniteMesuring:
+                        Unite de mesure:
                         <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
                         <br />
                     </li>
@@ -214,16 +212,16 @@
                     <br />
                 </ItemSeparatorTemplate>
                 <ItemTemplate>
-                    <li style="">numIng:
+                    <li style="color:white">Numero:
                         <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
                         <br />
-                        nomIng:
+                        Nom:
                         <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
                         <br />
-                        puIng:
+                        Prix Unitaire:
                         <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
                         <br />
-                        uniteMesuring:
+                        Unite de mesure:
                         <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
                         <br />
                     </li>
@@ -236,16 +234,16 @@
                     </div>
                 </LayoutTemplate>
                 <SelectedItemTemplate>
-                    <li style="">numIng:
+                    <li style="">Numero:
                         <asp:Label ID="numIngLabel" runat="server" Text='<%# Eval("numIng") %>' />
                         <br />
-                        nomIng:
+                        Nom:
                         <asp:Label ID="nomIngLabel" runat="server" Text='<%# Eval("nomIng") %>' />
                         <br />
-                        puIng:
+                        Prix Unitaire:
                         <asp:Label ID="puIngLabel" runat="server" Text='<%# Eval("puIng") %>' />
                         <br />
-                        uniteMesuring:
+                        Unite de mesure:
                         <asp:Label ID="uniteMesuringLabel" runat="server" Text='<%# Eval("uniteMesuring") %>' />
                         <br />
                     </li>
@@ -256,15 +254,15 @@
             <br />
             <br />
 
-            <p>On a une liste d'ingredients qu'on va presenter ici :</p>
+            <p style="color:white">On a une liste d'ingredients qu'on va presenter ici :</p>
             <asp:Repeater ID="Repeater1" runat="server" DataSourceID="SqlDataSource2">
                 <ItemTemplate>
-                    <img src="ImagesForStyle/cook.png" style="width:40px;height:45px"/>
-                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("nomIng") %>'  ></asp:Label>
+                    <img src="ImagesForStyle/cook.png" style="width:40px;height:45px" class="style2" />
+                    <asp:Label ID="Label2" runat="server" Text='<%# Eval("nomIng") %>'  CssClass="style2" ForeColor="White"></asp:Label>
                     <br />
                     <br />
                     <br />
-                    <asp:Label ID="Label1" runat="server" Text='<%# "Cet ingredient coute "+ Eval("puIng") +" pour chaque " + Eval("uniteMesuring")%>'   ></asp:Label>
+                    <asp:Label ID="Label1" runat="server" Text='<%# "Cet ingredient coute "+ Eval("puIng") +" pour chaque " + Eval("uniteMesuring")%>'   CssClass="style2" ForeColor="White"></asp:Label>
                     <br />
                     <br />
 

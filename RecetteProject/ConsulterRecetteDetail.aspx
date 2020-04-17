@@ -10,17 +10,22 @@
             width: 40%;
         }
         .auto-style2 {
-            width: 40%;
+            width: 30%;
+            text-align:left;
+            color:white;
         }
         .auto-style3 {
             width: 90%;
+        }
+        body{
+            background-color:#242582;
         }
     </style>
 </head>
 <body>
     <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+        <div style="text-align:center">
+            <asp:Label ID="Label1" runat="server" Text="Label" Font-Bold="True" Font-Size="22px" ForeColor="White"></asp:Label>
             <table style="width:100%;">
                 <tr style="width:100%">
                     <td class="auto-style2">
@@ -40,7 +45,7 @@
                         <br />
                         <asp:Repeater ID="Repeater1" runat="server" >
                             <ItemTemplate>
-                                <asp:Label ID="lblRp" runat="server" Text='<%# "- "+Eval("qteUtilise")+" "+Eval("uniteMesuring")+" "+Eval("nomIng") %>'></asp:Label>
+                                <asp:Label ID="lblRp" runat="server" Text='<%# "- "+Eval("qteUtilise")+" "+Eval("uniteMesuring")+" "+Eval("nomIng") %>' ForeColor="White"></asp:Label>
                                 <br />
                             </ItemTemplate>
                         </asp:Repeater>
@@ -49,9 +54,9 @@
                 </tr>
             </table>
             <br />
-            <p>Methode de preparation</p>
-            <p>
-                <asp:Label ID="Label7" runat="server" Text="Label" CssClass="auto-style3" ></asp:Label>
+            <p style="text-align:left;color:white">Methode de preparation</p>
+            <p style="text-align:left">
+                <asp:Label ID="Label7" runat="server" Text="Label" CssClass="auto-style3" ForeColor="White"></asp:Label>
             </p>
             
         </div>

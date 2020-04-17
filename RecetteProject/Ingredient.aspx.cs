@@ -20,55 +20,21 @@ namespace RecetteProject
             }
         }
 
-        protected void LinkButton1_Click(object sender, EventArgs e)
+        protected void LinkButton_Click(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 1;
+            LinkButton linkButton = (LinkButton)sender;
+            string id = linkButton.ID;
+            int view_position = int.Parse(id.Substring(id.Length - 1));
+
+            MultiView1.ActiveViewIndex = view_position;
         }
 
-        protected void LinkButton2_Click(object sender, EventArgs e)
+        protected void GridView1_RowDataBound(object sender, GridViewRowEventArgs e)
         {
-            MultiView1.ActiveViewIndex = 2;
+            if (e.Row.RowType == DataControlRowType.DataRow && e.Row.RowIndex != GridView1.EditIndex)
+            {
+                (e.Row.Cells[0].Controls[2] as ImageButton).OnClientClick = "return confirm('Do you want to delete this row?');";
+            }
         }
-
-        protected void NewButton_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        protected void InsertButton_Click(object sender, EventArgs e)
-        {
-            //ingredientTableAdapter ingredient = new ingredientTableAdapter();
-            //Response.Write(((TextBox)FormView1.FindControl("NomTextBox")).Text+"/"+ System.Convert.ToDecimal(((TextBox)FormView1.FindControl("Prix_UnitaireTextBox")).Text)+"/"+ ((TextBox)FormView1.FindControl("NomTextBox")).Text);
-            ////ingredient.Insert(((TextBox)FormView1.FindControl("NomTextBox")).Text, System.Convert.ToDecimal(((TextBox)FormView1.FindControl("Prix_UnitaireTextBox")).Text), ((TextBox)FormView1.FindControl("NomTextBox")).Text);
-            Response.Write("gg");
-        }
-
-        protected void LinkButton3_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 5;
-
-        }
-
-        protected void LinkButton6_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 0;
-
-        }
-
-        protected void LinkButton5_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 3;
-          
-
-        }
-
-        protected void LinkButton4_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 4;
-            
-
-        }
-
-       
     }
 }

@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using RecetteProject.DataSet1TableAdapters;
 using System.Data.SqlClient;
 using System.Data;
+using System.IO;
 
 namespace RecetteProject
 {
@@ -16,18 +17,7 @@ namespace RecetteProject
         {
             if (!IsPostBack)
             {
-                
-                
-                if (Request.Cookies["UserRecetteSite"] != null)
-                {
-                    HttpCookie cookie = Request.Cookies["UserRecetteSite"];
-                    string nom = cookie["UserName"];
-                   
-                }
-                else
-                {
-                    
-                }
+                FileUpload1.Attributes["onchange"] = "uploadimg(this)";             
             }
            
         }
@@ -40,19 +30,41 @@ namespace RecetteProject
         protected void btnCreer_Click(object sender, EventArgs e)
         {
             recetteTableAdapter tableAdapter = new recetteTableAdapter();
+            QueriesTableAdapter queries = new QueriesTableAdapter();
             DataTable table = tableAdapter.GetData();
-            int count = table.Rows.Count;
-            string img = "~/Images/Recette/DefaultRecette.jpg";
-            if (FileUpload1.HasFile)
+            string img = Image1.ImageUrl;
+            try
             {
-                string str = "~/Images/Recette/" + FileUpload1.FileName;
-                FileUpload1.PostedFile.SaveAs(Server.MapPath(str));
-                img = str;
+                tableAdapter.Insert(TextBox1.Text, DateTime.Now, RadioButtonList1.SelectedValue, int.Parse(TextBox2.Text), TextBox3.Text, img, int.Parse(DropDownList1.SelectedValue));
+            }catch(Exception ex)
+            {
+                Label4.Visible = true;
+                return;
+            }
+            int recId = (int)queries.getLastRecetteId();
+            Response.Redirect("DetailRecette.aspx?code=" + recId  + "&nom=" + TextBox1.Text);
+        }
+
+        protected void btnSaveImg_Click(object sender, EventArgs e)
+        {
+            string ext = Path.GetExtension(FileUpload1.FileName);
+            string[] exts = { ".jpg", ".png", ".jpeg" };
+            int i;
+            for (i = 0; i < exts.Length; i++)
+            {
+                if (ext == exts[i])
+                    break;
+            }
+            if(i==exts.Length)
+            {
+                Label5.Visible = true;
+                return;
             }
 
-            tableAdapter.Insert(TextBox1.Text, DateTime.Now, RadioButtonList1.SelectedValue, int.Parse(TextBox2.Text),TextBox3.Text, img, int.Parse(DropDownList1.SelectedValue));
-            count++;
-            Response.Redirect("DetailRecette.aspx?code=" + count  + "&nom=" + TextBox1.Text);
+            string str = "~/Images/Recette/" + FileUpload1.FileName;
+            FileUpload1.PostedFile.SaveAs(Server.MapPath(str));
+            Image1.ImageUrl = str;
+
         }
     }
 }

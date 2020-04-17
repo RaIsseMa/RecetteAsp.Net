@@ -16,23 +16,22 @@ namespace RecetteProject
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //code haytsard b HTTP Protocols b method post m html page
-            //bax twsal n xi variable sardtih b post method kat3ml Page.Request.Params[name dyalu li 3amlo f html]
 
             int code = int.Parse(Page.Request.Params["code"]);
-            //nxofo wax kayn had code deja f tabase awla lae
+
             DataTable dt = themeTable.GetData(code);
             if (dt.Rows.Count != 0)
             {
                 Response.Write("cet code existe deja");
-                return;
+                System.Threading.Thread.Sleep(1000);
+                Response.Redirect("~/Themes.html");
             }
-            //try catch bax ida kan kayn nom kayn deja mansjluhxi
             try
             {
                 themeTable.Insert(code, Page.Request.Params["name"]);
                 Response.Write("ajout effectué avec succès");
-
+                System.Threading.Thread.Sleep(1000);
+                Response.Redirect("~/Demarer.aspx");
             }
             catch (SqlException ex)
             {
@@ -40,11 +39,14 @@ namespace RecetteProject
                 if (ex.Number == 2627)
                 {
                     Response.Write("Ce thème existe déjà");
-
+                    System.Threading.Thread.Sleep(1000);
+                    Response.Redirect("~/Themes.html");
                 }
                 else
                 {
                     Response.Write(ex.Number);
+                    System.Threading.Thread.Sleep(1000);
+                    Response.Redirect("~/Themes.html");
                 }
             }
         }

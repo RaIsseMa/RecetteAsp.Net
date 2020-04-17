@@ -74,19 +74,28 @@
     <Content Include="Demarer.aspx" />
     <Content Include="DetailRecette.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="ImagesForStyle\backgrounddemarer.jpg" />
     <Content Include="ImagesForStyle\cook.png" />
+    <Content Include="ImagesForStyle\correct.png" />
+    <Content Include="ImagesForStyle\next.png" />
     <Content Include="ImagesForStyle\pencil.png" />
     <Content Include="ImagesForStyle\recettebackground.jpg" />
+    <Content Include="ImagesForStyle\recettehead.png" />
     <Content Include="ImagesForStyle\recetteimg.jpg" />
+    <Content Include="ImagesForStyle\recettetext.png" />
+    <Content Include="ImagesForStyle\recettetextwhite.png" />
     <Content Include="ImagesForStyle\trash.png" />
     <Content Include="Images\Recette\DefaultRecette.jpg" />
     <Content Include="Ingredient.aspx" />
     <Content Include="js\JavaScriptCreerRecettePage.js" />
     <Content Include="js\JavaScriptFile1.js" />
     <Content Include="styleCss\StyleFile1.css" />
+    <Content Include="styleCss\StyleForDemarer.css" />
+    <Content Include="styleCss\StyleForDetailRecette.css" />
     <Content Include="styleCss\StyleSheet1.css" />
     <Content Include="Themes.html" />
     <Content Include="Web.config" />
+    <Content Include="WebUserControl1.ascx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AjoutTheme.aspx.cs">
@@ -163,6 +172,13 @@
     </Compile>
     <Compile Include="Site2.Master.designer.cs">
       <DependentUpon>Site2.Master</DependentUpon>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebUserControl1.ascx.designer.cs">
+      <DependentUpon>WebUserControl1.ascx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
